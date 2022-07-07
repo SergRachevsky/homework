@@ -49,29 +49,6 @@ def get_input_data(args):
     # return value is list of lists of input numbers grouped by three
     return [args[i:i+3] for i in range(0, len(args), 3)]
 
-
-def make_se_text(a, b, c):
-    """
-    Makes square equation string from a, b, c coefficients.
-
-    Args:
-        a (integer): coefficient a
-        b (integer): coefficient b
-        c (integer): coefficient c
-
-    Returns:
-        string: textual representation of square equation
-    """
-    # make square equation string more comfortable to read for humans
-    # (remove equation elements with coefficient equal to zero and also 
-    # correctly put minuses and pluses into the result string) 
-    a_str = f"{a}x^2" if abs(a) != 1 else "x^2"
-    b_str = f"{' + ' if b > 0 else ' - '}{abs(b)}x" if b != 0 else ""
-    c_str = f"{' + ' if c > 0 else ' - '}{abs(c)}"  if c != 0 else ""
-
-    return f"{a_str}{b_str}{c_str} = 0"
-
-
 def se_solve(a, b, c):
     """
     Solves regular quadratic equation.
@@ -90,6 +67,8 @@ def se_solve(a, b, c):
     #  - return code constant
     #  - list of roots (empty for no roots and consist one of two numbers if equations has root(s))
     #  - textual representation of solution used later for printing out
+    #
+    # note: rc variable isn't used in se_solver.py but it is used in test_se_solver.py
 
     roots = []
 
@@ -122,7 +101,6 @@ def se_solve(a, b, c):
 
     return rc, roots, text
 
-
 def print_solution(a, b, c, text):
     """
     Prints quadratic equation and its soulution
@@ -138,6 +116,26 @@ def print_solution(a, b, c, text):
     square_equation = make_se_text(a, b, c)
     print(f"[{a:5}, {b:5}, {c:5}]  ==>  {square_equation:24}  ==>  {text}")
 
+def make_se_text(a, b, c):
+    """
+    Makes square equation string from a, b, c coefficients.
+
+    Args:
+        a (integer): coefficient a
+        b (integer): coefficient b
+        c (integer): coefficient c
+
+    Returns:
+        string: textual representation of square equation
+    """
+    # make square equation string more comfortable to read for humans
+    # (remove equation elements with coefficient equal to zero and also 
+    # correctly put minuses and pluses into the result string) 
+    a_str = f"{a}x^2" if abs(a) != 1 else "x^2"
+    b_str = f"{' + ' if b > 0 else ' - '}{abs(b)}x" if b != 0 else ""
+    c_str = f"{' + ' if c > 0 else ' - '}{abs(c)}"  if c != 0 else ""
+
+    return f"{a_str}{b_str}{c_str} = 0"
 
 if __name__ == "__main__":
     # very simple logic: get triads of coefficients, 
