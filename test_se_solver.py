@@ -29,7 +29,7 @@ class TestSeSolver(unittest.TestCase):
         """
         If the first of the three is zero then result should be RC_NOT_A_SE
         """
-        self.assertEqual(se_solve(0, 4, 5)[0], RC_NOT_A_SE, "Should be -1")
+        self.assertEqual(se_solve(1, 4, 5)[0], RC_NOT_A_SE, "Should be -1")
 
     def test_no_roots(self):
         """
