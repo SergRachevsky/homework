@@ -23,7 +23,8 @@ $ python3 se_solver.py 1 2 -3 4 5 6 9 -6 10 78 14 0 0 -4 12 -9
 [   -9,     0,     0]  ==>  -9x^2 = 0                 ==>  x  =  -0.00
 ```
 
-There are also unit tests for this script located in test_se_solver.py. Tests are based on unittest Pyton module.
+There are also unit tests for this script located in test_se_solver.py. Tests are based on ```unittest``` Pyton module.
+
 Below are some examples how to use tests.
 
 1. Fastest and simpliest way to get info that all tests are passed:
@@ -37,7 +38,7 @@ OK
 ```
 You will see only summary of tests.
 
-2. If you want to see more information about which tests present, use '-v' key:
+2. If you want to see more information about which tests present, use ```'-v'``` key:
 
 ```
 $ python3 -m unittest discover -v
@@ -63,7 +64,7 @@ OK
 ```
 In this case you will see name of every test with its result.
 
-3. Also you may run only any specific test with next command:
+3. Also you may run only specific test with next command:
 
 ```
 $ python3 -m unittest test_se_solver.TestSeSolver.test_not_a_se -v 
@@ -77,7 +78,7 @@ OK
 ```
 Here we got results concerning 'test_not_a_se' test only.
 
-Tests results interpretaion
+# Tests results interpretation
 
 If test has passed, you will see 'ok' after every test name and also "OK" as a last line of output.
 Like it was in examples above.
