@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-
+#
+# This is unit test module for se_solver.py script testing
+#
+#
 import unittest
 
 from se_solver import get_input_data, se_solve, make_se_text
@@ -15,9 +18,9 @@ class TestSeSolver(unittest.TestCase):
         """
         Make sure arguments from command line are converted into the list of triads correctly
         """
+        self.assertEqual(get_input_data(['script name', '1', '2', '3', '4', '5', '6', '7', '8', '9']), [[1, 2, 3], [4, 5, 6], [7, 8, 9]], "Should be [[1, 2, 3], [4, 5, 6], [7, 8, 9]]")
         self.assertEqual(get_input_data(['script name', '1', '2', '3', '4']), [[1, 2, 3], [4, 0, 0]], "Should be [[1, 2, 3], [4, 0, 0]]")
         self.assertEqual(get_input_data(['script name', '1', '2', '3', '4', '5']), [[1, 2, 3], [4, 5, 0]], "Should be [[1, 2, 3], [4, 5, 0]]")
-    
     
     def test_get_input_data_empty(self):
         """
@@ -29,13 +32,14 @@ class TestSeSolver(unittest.TestCase):
         """
         If the first of the three is zero then result should be RC_NOT_A_SE
         """
-        self.assertEqual(se_solve(1, 4, 5)[0], RC_NOT_A_SE, "Should be -1")
+        self.assertEqual(se_solve(0, 4, 5)[0], RC_NOT_A_SE, "Should be -1")
 
     def test_no_roots(self):
         """
         Check that we correctly solved the equation with no roots
         """
         self.assertEqual(se_solve(10, -1, 2)[0], RC_NO_ROOTS, "Should be 0")
+        self.assertEqual(se_solve(4, 5, 6)[0], RC_NO_ROOTS, "Should be 0")
 
     def test_one_root(self):
         """
@@ -48,6 +52,7 @@ class TestSeSolver(unittest.TestCase):
         Check that we correctly solved the equation with two roots
         """
         self.assertEqual(se_solve(2, 5, -2)[0], RC_TWO_ROOTS, "Should be 2")
+        self.assertEqual(se_solve(1, 2, -3)[0], RC_TWO_ROOTS, "Should be 2")
 
     def test_make_se_text(self):
         """
