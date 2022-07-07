@@ -44,7 +44,7 @@ OK
 ```
 You will see only summary of tests.
 
-2. If you want to see more information about which tests present, use ```'-v'``` key:
+2. If you want to see more information about which tests present, use ```-v``` key:
 
 ```
 $ python3 -m unittest discover -v
