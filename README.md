@@ -1,5 +1,8 @@
-# homework
-This script solves a regular quadratic equation. 
+# What is it
+
+```se_solver.py``` is the script that solves a regular quadratic equation. 
+
+# How to run
 The program receives parameters of the equation as a stream of numbers from the command line:
 
 ```
@@ -7,6 +10,8 @@ The program receives parameters of the equation as a stream of numbers from the 
 ```
 
 All number are integers and some of them can be 0. 
+
+# What is a result of script execution
 
 As result the script prints input numbers, textual representation of the equation and solution for the equation, 
 one line per equation.
@@ -22,8 +27,9 @@ $ python3 se_solver.py 1 2 -3 4 5 6 9 -6 10 78 14 0 0 -4 12 -9
 [    0,    -4,    12]  ==>  0x^2 - 4x + 12 = 0        ==>  Not a square equation (a=0)
 [   -9,     0,     0]  ==>  -9x^2 = 0                 ==>  x  =  -0.00
 ```
+# How to test
 
-There are also unit tests for this script located in test_se_solver.py. Tests are based on ```unittest``` Pyton module.
+There are also unit tests for this script located in ```test_se_solver.py```. Tests are based on ```unittest``` Pyton module.
 
 Below are some examples how to use tests.
 
@@ -76,7 +82,7 @@ Ran 1 test in 0.000s
 
 OK
 ```
-Here we got results concerning 'test_not_a_se' test only.
+Here we got results concerning ```test_not_a_se``` test only.
 
 # Tests results interpretation
 
