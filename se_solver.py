@@ -11,7 +11,7 @@
 # one line per equation.
 #
 # There are also unit tests for this script located in test_se_solver.py. 
-# Description of how to run these tests and how to interpret test results could be found there or in README
+# Description of how to run these tests and how to interpret test results could be found in README.md.
 #
 # About variables naming: 
 # In the script I use 'a', 'b' and 'c' variables as coefficients of quadratic equation and
