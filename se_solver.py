@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 #
-# This script solves a regular quadratic equation. 
+# This script solves a regular quadratic equation (a*x^2 + b*x + c = 0).
 # The program receives parameters of the equation as a stream of numbers from the command line:
 #
 # > se_solver 3 4 5 0 4 -4 11 22 123 45 42 42 67 1001 …
@@ -12,6 +12,10 @@
 #
 # There are also unit tests for this script located in test_se_solver.py. 
 # Description of how to run these tests and how to interpret test results could be found there or in README
+#
+# About variables naming: 
+# In the script I use 'a', 'b' and 'c' variables as coefficients of quadratic equation and
+# x, x1, x2 as roots of quadratic equation
 
 import sys
 from math import sqrt
