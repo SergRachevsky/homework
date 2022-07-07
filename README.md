@@ -6,7 +6,7 @@
 The program receives parameters of the equation as a stream of numbers from the command line:
 
 ```
-> se_solver 3 4 5 0 4 -4 11 22 123 45 42 42 67 1001 …
+$python3 se_solver.py 3 4 5 0 4 -4 11 22 123 45 42 42 67 1001 …
 ```
 
 All number are integers and some of them can be 0. 
